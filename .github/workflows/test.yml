@@ -58,7 +58,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: covdata
-          path: .coverage*
+          path: .coverage.*
 
   coverage:
     name: Coverage
@@ -79,18 +79,10 @@ jobs:
         run: |
           python -m pip install tox tox-gh-actions
 
-      - name: "List files"
-        run: |
-          ls -la
-
       - name: "Download coverage data"
         uses: actions/download-artifact@v3
         with:
           name: covdata
-
-      - name: "List files"
-        run: |
-          ls -la
 
       - name: "Combine"
         run: |
