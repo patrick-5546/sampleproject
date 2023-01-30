@@ -2,8 +2,8 @@
 # testing in general, but rather to support the `find_packages` example in
 # setup.py that excludes installing the "tests" package
 
-import sample.simple
+import sample
 
 
-def test_add_one():
-    assert sample.simple.add_one(5) == 6
+def test_main_run():
+    sample.main()
