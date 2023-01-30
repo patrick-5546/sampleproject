@@ -48,6 +48,10 @@ Steps to complete after using this template to create a repository.
 5. Create a GitHub personal access token with the "gist" scope and copy its value
 6. Create a repository secret named "GIST_TOKEN" and paste the token
 
+### Update Tests
+
+1. Update `source` in [`.coveragerc`](.coveragerc) accordingly
+
 ## Preparing for release
 
 Steps to complete once ready to publish a release.
