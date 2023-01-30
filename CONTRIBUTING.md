@@ -10,4 +10,4 @@
 ## Commands
 
 - Test: `tox -e py`
-- Format: `tox -e format`
+- Format: `black .`
