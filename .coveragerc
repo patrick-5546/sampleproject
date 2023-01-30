@@ -10,7 +10,7 @@ source =
     sample
     tests
 omit =
-    */__main__.py
+    tests/__init__.py
 
 [report]
 show_missing = true
