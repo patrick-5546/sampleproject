@@ -1,0 +1,20 @@
+{
+    "recommendations": [
+        "bierner.markdown-preview-github-styles",
+        "cameron.vscode-pytest",
+        "christian-kohler.path-intellisense",
+        "eamodio.gitlens",
+        "kevinrose.vsc-python-indent",
+        "matangover.mypy",
+        "ms-python.black-formatter",
+        "ms-python.flake8",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "njpwerner.autodocstring",
+        "njqdev.vscode-python-typehint",
+        "streetsidesoftware.code-spell-checker",
+        "tushortz.python-extended-snippets",
+        "visualstudioexptteam.vscodeintellicode",
+        "visualstudioexptteam.intellicode-api-usage-examples",
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "cSpell.enabled": true,
+    "editor.renderWhitespace": "trailing",
+
+    "[python]": {
+        "editor.wordBasedSuggestions": false,
+        "editor.rulers": [88],
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "mypy.runUsingActiveInterpreter": true,
+    "mypy.targets": [
+        "src",
+        "tests"
+    ],
+    "python.formatting.provider": "none",
+    "python.testing.pytestArgs": [
+        "-Wd",
+        "--cov",
+        "--cov-branch",
+        "--cov-report=term-missing"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
