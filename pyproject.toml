@@ -121,7 +121,7 @@ dev = [
 ]
 test = [
   "black==22.12",
-  "coverage",
+  "coverage==7.0.5",
   "flake8",
   "mypy>=0.991",
   "pytest>=7",
