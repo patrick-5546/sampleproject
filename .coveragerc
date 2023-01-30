@@ -9,8 +9,6 @@ parallel = true
 source =
     sample
     tests
-omit =
-    tests/__init__.py
 
 [report]
 show_missing = true
