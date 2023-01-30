@@ -52,6 +52,10 @@ Steps to complete after using this template to create a repository.
 
 1. Update `source` in [`.coveragerc`](.coveragerc) accordingly
 
+### Update Infrastructure
+
+1. Update code owners in [`.github/CODEOWNERS`](.github/CODEOWNERS) accordingly
+
 ## Preparing for release
 
 Steps to complete once ready to publish a release.
