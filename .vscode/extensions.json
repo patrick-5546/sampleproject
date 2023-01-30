@@ -14,7 +14,7 @@
         "njqdev.vscode-python-typehint",
         "streetsidesoftware.code-spell-checker",
         "tushortz.python-extended-snippets",
-        "visualstudioexptteam.vscodeintellicode",
         "visualstudioexptteam.intellicode-api-usage-examples",
+        "visualstudioexptteam.vscodeintellicode"
     ]
 }
