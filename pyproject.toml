@@ -121,6 +121,7 @@ test = [
   "flake8",
   "mypy>=0.991",
   "pytest>=7",
+  "pytest-cov",
   "pytest-sugar"
 ]
 

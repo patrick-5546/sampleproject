@@ -1,3 +1,6 @@
+[![Test][testbadge]][testfile]
+![Coverage][covbadge]
+
 # A sample Python project
 
 ![Python Logo](https://www.python.org/static/community_logos/python-logo.png "Sample inline image")
@@ -31,6 +34,17 @@ usage examples, etc. Generally, including the project changelog in here is not a
 good idea, although a simple “What's New” section for the most recent version
 may be appropriate.
 
+## Initialize the code coverage badge
+
+1. Create an empty secret gist and copy its ID
+2. Update the `covbadge` URL in this file with the repository owner and gist ID
+3. Update `gistID` in [`~/.github/workflows/tests.yml`](./.github/workflows/test.yml) with the gist ID
+4. Create a GitHub personal access token with the "gist" scope and copy its value
+5. Create a repository secret with the name "GIST_TOKEN" and paste the token
+
+[testbadge]: https://github.com/patrick-5546/sampleproject/actions/workflows/test.yml/badge.svg
+[testfile]: https://github.com/patrick-5546/sampleproject/actions/workflows/test.yml
+[covbadge]: https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/patrick-5546/845b19d91f3d03c94677f6fae6eb414c/raw/covbadge.json
 [packaging guide]: https://packaging.python.org
 [distribution tutorial]: https://packaging.python.org/tutorials/packaging-projects/
 [src]: https://github.com/pypa/sampleproject
