@@ -13,6 +13,10 @@ defaults:
   run:
     shell: bash
 
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
 jobs:
   tests:
     name: "Python ${{ matrix.python-version }} on ${{ matrix.os }}"
@@ -39,6 +43,8 @@ jobs:
         uses: "actions/setup-python@v4"
         with:
           python-version: "${{ matrix.python-version }}"
+          cache: pip
+          cache-dependency-path: 'pyproject.toml'
 
       - name: "Install dependencies"
         run: |
@@ -66,6 +72,8 @@ jobs:
         uses: "actions/setup-python@v4"
         with:
           python-version: "3.x"
+          cache: pip
+          cache-dependency-path: 'pyproject.toml'
 
       - name: "Install dependencies"
         run: |
@@ -84,6 +92,8 @@ jobs:
           echo "### Total coverage: ${TOTAL}%" >> $GITHUB_STEP_SUMMARY
 
       - name: "Make badge"
+        if: (github.repository == 'patrick-5546/sampleproject') && (github.ref == 'refs/heads/main')
+        # https://gist.github.com/patrick-5546/845b19d91f3d03c94677f6fae6eb414c
         uses: schneegans/dynamic-badges-action@v1.6.0
         with:
           # GIST_TOKEN is a GitHub personal access token with scope "gist".
