@@ -34,13 +34,27 @@ usage examples, etc. Generally, including the project changelog in here is not a
 good idea, although a simple “What's New” section for the most recent version
 may be appropriate.
 
-## Initialize the code coverage badge
+## Initializing the repository
 
-1. Create an empty secret gist and copy its ID
-2. Update the `covbadge` URL in this file with the repository owner and gist ID
-3. Update `gistID` in [`~/.github/workflows/tests.yml`](./.github/workflows/test.yml) with the gist ID
-4. Create a GitHub personal access token with the "gist" scope and copy its value
-5. Create a repository secret with the name "GIST_TOKEN" and paste the token
+Steps to complete after using this template to create a repository.
+
+### Update Badges
+
+1. Update the `testbadge` and `testfile` URLs in this file with the repository owner and name
+2. Create an empty secret gist and copy its ID
+3. Update the `covbadge` URL in this file with the repository owner and gist ID
+4. Update `gistID` in [`.github/workflows/tests.yml`](.github/workflows/test.yml) with the gist ID
+5. Create a GitHub personal access token with the "gist" scope and copy its value
+6. Create a repository secret named "GIST_TOKEN" and paste the token
+
+## Preparing for release
+
+Steps to complete once ready to publish a release.
+
+1. Go through [`pyproject.toml`](pyproject.toml) and update the relevant fields
+2. Uncomment `testenv` dependencies and commands for build and twine in [`tox.ini`](tox.ini)
+3. Create a repository secret named "pypi_password" with the corresponding value
+4. Releases will be pushed to PyPI once they are published on GitHub
 
 [testbadge]: https://github.com/patrick-5546/sampleproject/actions/workflows/test.yml/badge.svg
 [testfile]: https://github.com/patrick-5546/sampleproject/actions/workflows/test.yml
