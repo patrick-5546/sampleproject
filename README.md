@@ -16,12 +16,12 @@ The metadata for a Python project is defined in the `pyproject.toml` file,
 an example of which is included in this project. You should edit this file
 accordingly to adapt this sample project to your needs.
 
-----
+---
 
 This is the README file for the project.
 
 The file should use UTF-8 encoding and can be written using
-[reStructuredText][rst] or [markdown][md use] with the appropriate [key set][md
+[reStructuredText][rst] or [markdown][md] with the appropriate [key set][md
 use]. It will be used to generate the project webpage on PyPI and will be
 displayed as the project homepage on common code-hosting services, and should be
 written for that purpose.
