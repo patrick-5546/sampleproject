@@ -1,0 +1,6 @@
+include *.md
+include .coveragerc
+include tox.ini
+
+recursive-include .vscode *
+recursive-include tests *.py
