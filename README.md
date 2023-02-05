@@ -1,8 +1,11 @@
 # A sample Python project
 
-<!-- [![PyPI version][versionbadge]][versionfile] -->
+<!-- [![PyPI][versionbadge]][packageurl] -->
 [![Test][testbadge]][testfile]
 ![Coverage][covbadge]
+
+<!-- ![PyPI - Python Version][pyversionbadge] -->
+[![GitHub][licensebadge]][licenseurl]
 
 ![Python Logo](https://www.python.org/static/community_logos/python-logo.png "Sample inline image")
 
@@ -63,15 +66,18 @@ Steps to complete once ready to publish a release.
 
 1. Go through [`pyproject.toml`](pyproject.toml) and update the relevant fields
 2. In [`tox.ini`](tox.ini), uncomment `testenv` dependencies and commands for build and twine
-3. In this file, uncomment the version badge and uncomment and update its URLs with the package name where applicable
+3. In this file, uncomment badges and uncomment and update their URLs with the package name where applicable
 4. Create a repository secret named "PYPI_API_TOKEN" with the corresponding value
 5. Releases will be pushed to PyPI once they are published on GitHub
 
-<!-- [versionbadge]: https://badge.fury.io/py/sample.svg
-[versionfile]: https://badge.fury.io/py/sample -->
+<!-- [versionbadge]: https://img.shields.io/pypi/v/sample -->
+<!-- [packageurl]: https://pypi.org/project/sample/ -->
 [testbadge]: https://github.com/patrick-5546/sampleproject/actions/workflows/test.yml/badge.svg
 [testfile]: https://github.com/patrick-5546/sampleproject/actions/workflows/test.yml
 [covbadge]: https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/patrick-5546/845b19d91f3d03c94677f6fae6eb414c/raw/covbadge.json
+<!-- [pyversionbadge]: https://img.shields.io/pypi/pyversions/sample -->
+[licensebadge]: https://img.shields.io/github/license/patrick-5546/sampleproject
+[licenseurl]: https://github.com/patrick-5546/sampleproject/blob/update-infra/LICENSE
 [packaging guide]: https://packaging.python.org
 [distribution tutorial]: https://packaging.python.org/tutorials/packaging-projects/
 [src]: https://github.com/pypa/sampleproject
