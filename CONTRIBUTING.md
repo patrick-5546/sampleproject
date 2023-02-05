@@ -9,11 +9,18 @@
 
 ## Commands
 
+Since all dependencies noted below are installed in the development environment,
+they can be run independently in the terminal.
+
 - `tox`
     - Tests using [pytest](https://pypi.org/project/pytest/)
-    - Formats using [black](https://pypi.org/project/black/)
-    - Type checks using [mypy](https://pypi.org/project/mypy/)
-    - Generates coverage reports using [coverage](https://pypi.org/project/coverage/)
+    - Lint environment:
+        - Checks style using [flake8](https://pypi.org/project/flake8/)
+        - Type checks using [mypy](https://pypi.org/project/mypy/)
+    - Coverage environment: generates coverage reports using [coverage](https://pypi.org/project/coverage/)
         - To view coverage report, open `htmlcov/index.html` in a browser
         - If you get the error "No data to combine" while running `coverage combine`, delete `.coverage`
-- All `tox` dependencies are installed in the development environment so that they can be run independently
+- `tox -e format`
+    - Formats using [black](https://pypi.org/project/black/)
+- `tox -e upgrade`
+    - Upgrade dependencies using [pip-tools](https://pypi.org/project/pip-tools/)
