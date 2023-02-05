@@ -62,7 +62,7 @@ Steps to complete once ready to publish a release.
 
 1. Go through [`pyproject.toml`](pyproject.toml) and update the relevant fields
 2. Uncomment `testenv` dependencies and commands for build and twine in [`tox.ini`](tox.ini)
-3. Create a repository secret named "pypi_password" with the corresponding value
+3. Create a repository secret named "PYPI_API_TOKEN" with the corresponding value
 4. Releases will be pushed to PyPI once they are published on GitHub
 
 [testbadge]: https://github.com/patrick-5546/sampleproject/actions/workflows/test.yml/badge.svg
