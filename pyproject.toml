@@ -115,7 +115,8 @@ dependencies = [ # Optional
 # projects.
 [project.optional-dependencies] # Optional
 format = [
-  "black==22.12"
+  "black==22.12",
+  "isort"
 ]
 lint = [
   "flake8",

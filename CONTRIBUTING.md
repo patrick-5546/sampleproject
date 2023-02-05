@@ -22,5 +22,6 @@ they can be run independently in the terminal.
         - If you get the error "No data to combine" while running `coverage combine`, delete `.coverage`
 - `tox -e format`
     - Formats using [black](https://pypi.org/project/black/)
+    - Sorts dependencies using [isort](https://pypi.org/project/isort/)
 - `tox -e upgrade`
     - Upgrade dependencies using [pip-tools](https://pypi.org/project/pip-tools/)
