@@ -2,11 +2,11 @@
     "version": "0.2",
     "language": "en",
     "words": [
+        "Pytest"
     ],
     "flagWords": [
         "hte"
     ],
     "allowCompoundWords": true,
-    "ignorePaths": [
-    ]
+    "ignorePaths": []
 }

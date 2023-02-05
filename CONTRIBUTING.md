@@ -25,3 +25,13 @@ they can be run independently in the terminal.
     - Sorts dependencies using [isort](https://pypi.org/project/isort/)
 - `tox -e upgrade`
     - Upgrade dependencies using [pip-tools](https://pypi.org/project/pip-tools/)
+
+## VS Code Integration
+
+Relevant files can be found in  [`.vscode/`](.vscode).
+
+- Recommended extensions: recommends helpful extensions to be installed
+- Pytest with coverage
+- Format on save
+- Ruler at line length limit
+- Show trailing whitespace
