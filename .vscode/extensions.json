@@ -8,11 +8,13 @@
         "matangover.mypy",
         "ms-python.black-formatter",
         "ms-python.flake8",
+        "ms-python.isort",
         "ms-python.python",
         "ms-python.vscode-pylance",
         "njpwerner.autodocstring",
         "njqdev.vscode-python-typehint",
         "streetsidesoftware.code-spell-checker",
+        "tamasfe.even-better-toml",
         "tushortz.python-extended-snippets",
         "visualstudioexptteam.intellicode-api-usage-examples",
         "visualstudioexptteam.vscodeintellicode"

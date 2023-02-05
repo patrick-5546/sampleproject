@@ -1,7 +1,11 @@
 # A sample Python project
 
+<!-- [![PyPI][versionbadge]][packageurl] -->
 [![Test][testbadge]][testfile]
 ![Coverage][covbadge]
+
+<!-- ![PyPI - Python Version][pyversionbadge] -->
+[![GitHub][licensebadge]][licenseurl]
 
 ![Python Logo](https://www.python.org/static/community_logos/python-logo.png "Sample inline image")
 
@@ -40,34 +44,40 @@ Steps to complete after using this template to create a repository.
 
 ### Update Badges
 
-1. Update the `testbadge` and `testfile` URLs in this file with the repository owner and name where applicable
+1. In this file, update the `testbadge` and `testfile` URLs with the repository owner and name where applicable
 2. Create an empty secret gist named `covbadge.json` and copy its ID
-3. Update the `covbadge` URL in this file with the repository owner and gist ID where applicable
-4. Update the "Make badge" step of "Coverage" in [`.github/workflows/tests.yml`](.github/workflows/test.yml) with the
+3. In this file, update the `covbadge` URL with the repository owner and gist ID where applicable
+4. In [`.github/workflows/tests.yml`](.github/workflows/test.yml), update the "Make badge" step of "Coverage" with the
    repository owner, repository name, and gist ID where applicable
 5. Create a GitHub personal access token with the "gist" scope and copy its value
 6. Create a repository secret named "GIST_TOKEN" and paste the token
 
 ### Update Tests
 
-1. Update `source` in [`.coveragerc`](.coveragerc) accordingly
+1. In [`.coveragerc`](.coveragerc), update `source` accordingly
 
 ### Update Infrastructure
 
-1. Update code owners in [`.github/CODEOWNERS`](.github/CODEOWNERS) accordingly
+1. In [`.github/CODEOWNERS`](.github/CODEOWNERS), update code owners accordingly
 
 ## Preparing for release
 
 Steps to complete once ready to publish a release.
 
 1. Go through [`pyproject.toml`](pyproject.toml) and update the relevant fields
-2. Uncomment `testenv` dependencies and commands for build and twine in [`tox.ini`](tox.ini)
-3. Create a repository secret named "pypi_password" with the corresponding value
-4. Releases will be pushed to PyPI once they are published on GitHub
+2. In [`tox.ini`](tox.ini), uncomment `testenv` commands
+3. In this file, uncomment badges and uncomment and update their URLs with the package name where applicable
+4. Create a repository secret named "PYPI_API_TOKEN" with the corresponding value
+5. Releases will be pushed to PyPI once they are published on GitHub
 
+<!-- [versionbadge]: https://img.shields.io/pypi/v/sample -->
+<!-- [packageurl]: https://pypi.org/project/sample/ -->
 [testbadge]: https://github.com/patrick-5546/sampleproject/actions/workflows/test.yml/badge.svg
 [testfile]: https://github.com/patrick-5546/sampleproject/actions/workflows/test.yml
 [covbadge]: https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/patrick-5546/845b19d91f3d03c94677f6fae6eb414c/raw/covbadge.json
+<!-- [pyversionbadge]: https://img.shields.io/pypi/pyversions/sample -->
+[licensebadge]: https://img.shields.io/github/license/patrick-5546/sampleproject
+[licenseurl]: https://github.com/patrick-5546/sampleproject/blob/update-infra/LICENSE
 [packaging guide]: https://packaging.python.org
 [distribution tutorial]: https://packaging.python.org/tutorials/packaging-projects/
 [src]: https://github.com/pypa/sampleproject

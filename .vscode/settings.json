@@ -6,8 +6,12 @@
         "editor.wordBasedSuggestions": false,
         "editor.rulers": [88],
         "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
     },
+    "isort.args":["--profile", "black"],
     "mypy.runUsingActiveInterpreter": true,
     "mypy.targets": [
         "src",
