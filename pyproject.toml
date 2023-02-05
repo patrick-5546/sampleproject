@@ -114,7 +114,6 @@ dependencies = [ # Optional
 # Similar to `dependencies` above, these must be valid existing
 # projects.
 [project.optional-dependencies] # Optional
-coverage = ["coverage"]
 format = [
   "black==22.12"
 ]
