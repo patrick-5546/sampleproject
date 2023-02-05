@@ -114,20 +114,24 @@ dependencies = [ # Optional
 # Similar to `dependencies` above, these must be valid existing
 # projects.
 [project.optional-dependencies] # Optional
-dev = [
-  "build",
-  "check-manifest>=0.42",
-  "twine"
+coverage = ["coverage"]
+format = [
+  "black==22.12"
+]
+lint = [
+  "flake8",
+  "mypy>=0.991"
 ]
 test = [
-  "black==22.12",
+  "build",
+  "check-manifest>=0.42",
   "coverage",
-  "flake8",
-  "mypy>=0.991",
   "pytest>=7",
-  "pytest-cov",
-  "pytest-sugar"
+  "pytest-sugar",
+  "twine"
 ]
+upgrade = ["pip-tools"]
+vscode = ["pytest-cov"]
 
 # List URLs that are relevant to your project
 #
