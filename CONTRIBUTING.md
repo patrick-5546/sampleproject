@@ -15,4 +15,5 @@
     - Type checks using [mypy](https://pypi.org/project/mypy/)
     - Generates coverage reports using [coverage](https://pypi.org/project/coverage/)
         - To view coverage report, open `htmlcov/index.html` in a browser
+        - If you get the error "No data to combine" while running `coverage combine`, delete `.coverage`
 - All `tox` dependencies are installed in the development environment so that they can be run independently
