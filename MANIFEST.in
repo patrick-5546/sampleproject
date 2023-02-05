@@ -3,4 +3,5 @@ include .coveragerc
 include tox.ini
 
 recursive-include .vscode *
+recursive-include requirements *.txt
 recursive-include tests *.py
