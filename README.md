@@ -44,9 +44,10 @@ Steps to complete after using this template to create a repository.
 
 ### Update Badges
 
-1. In this file, update the `testbadge` and `testfile` URLs with the repository owner and name where applicable
+1. In this file, update `testbadge`, `testfile`, `licensebadge`, and `licenseurl` with the repository owner and name
+   where applicable
 2. Create an empty secret gist named `covbadge.json` and copy its ID
-3. In this file, update the `covbadge` URL with the repository owner and gist ID where applicable
+3. In this file, update `covbadge` with the repository owner and gist ID where applicable
 4. In [`.github/workflows/tests.yml`](.github/workflows/test.yml), update the "Make badge" step of "Coverage" with the
    repository owner, repository name, and gist ID where applicable
 5. Create a GitHub personal access token with the "gist" scope and copy its value
