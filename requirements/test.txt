@@ -22,7 +22,7 @@ check-manifest==0.49
     # via sampleproject (pyproject.toml)
 coverage==7.1.0
     # via sampleproject (pyproject.toml)
-cryptography==39.0.0
+cryptography==39.0.1
     # via secretstorage
 docutils==0.19
     # via readme-renderer
