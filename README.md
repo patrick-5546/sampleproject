@@ -78,7 +78,7 @@ Steps to complete once ready to publish a release.
 [covbadge]: https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/patrick-5546/845b19d91f3d03c94677f6fae6eb414c/raw/covbadge.json
 <!-- [pyversionbadge]: https://img.shields.io/pypi/pyversions/sample -->
 [licensebadge]: https://img.shields.io/github/license/patrick-5546/sampleproject
-[licenseurl]: https://github.com/patrick-5546/sampleproject/blob/update-infra/LICENSE
+[licenseurl]: https://github.com/patrick-5546/sampleproject/blob/main/LICENSE
 [packaging guide]: https://packaging.python.org
 [distribution tutorial]: https://packaging.python.org/tutorials/packaging-projects/
 [src]: https://github.com/pypa/sampleproject
