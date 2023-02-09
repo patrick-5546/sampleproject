@@ -6,7 +6,7 @@
 #
 attrs==22.2.0
     # via pytest
-black==22.12
+black==23.1.0
     # via sampleproject (pyproject.toml)
 bleach==6.0.0
     # via readme-renderer
@@ -73,6 +73,7 @@ mypy-extensions==1.0.0
     #   mypy
 packaging==23.0
     # via
+    #   black
     #   build
     #   pytest
     #   pytest-sugar

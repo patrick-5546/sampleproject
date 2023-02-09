@@ -115,18 +115,18 @@ dependencies = [ # Optional
 # projects.
 [project.optional-dependencies] # Optional
 format = [
-  "black==22.12",
+  "black",
   "isort"
 ]
 lint = [
   "flake8",
-  "mypy>=0.991"
+  "mypy"
 ]
 test = [
   "build",
-  "check-manifest>=0.42",
+  "check-manifest",
   "coverage",
-  "pytest>=7",
+  "pytest",
   "pytest-sugar",
   "twine"
 ]
