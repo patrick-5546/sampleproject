@@ -2,7 +2,24 @@
     "version": "0.2",
     "language": "en",
     "words": [
-        "Pytest"
+        "arithmatex",
+        "covbadge",
+        "coveragerc",
+        "devenv",
+        "htmlcov",
+        "inlinehilite",
+        "isort",
+        "linenums",
+        "materialx",
+        "mathjax",
+        "mypy",
+        "pymdownx",
+        "PYPI",
+        "pyproject",
+        "Pytest",
+        "testenv",
+        "twemoji",
+        "venv"
     ],
     "flagWords": [
         "hte"
