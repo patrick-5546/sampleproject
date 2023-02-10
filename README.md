@@ -48,25 +48,28 @@ Steps to complete after using this template to create a repository.
    where applicable
 2. Create an empty secret gist named `covbadge.json` and copy its ID
 3. In this file, update `covbadge` with the repository owner and gist ID where applicable
-4. In [`.github/workflows/tests.yml`](.github/workflows/test.yml), update the "Make badge" step of "Coverage" with the
+4. In [`.github/workflows/tests.yml`](https://github.com/patrick-5546/sampleproject/blob/main/.github/workflows/test.yml),
+   update the "Make badge" step of "Coverage" with the
    repository owner, repository name, and gist ID where applicable
 5. Create a GitHub personal access token with the "gist" scope and copy its value
 6. Create a repository secret named "GIST_TOKEN" and paste the token
 
 ### Update Tests
 
-1. In [`.coveragerc`](.coveragerc), update `source` accordingly
+1. In [`.coveragerc`](https://github.com/patrick-5546/sampleproject/blob/main/.coveragerc), update `source` accordingly
 
 ### Update Infrastructure
 
-1. In [`.github/CODEOWNERS`](.github/CODEOWNERS), update code owners accordingly
+1. In [`.github/CODEOWNERS`](https://github.com/patrick-5546/sampleproject/blob/main/.github/CODEOWNERS), update code
+   owners accordingly
 
 ## Preparing for release
 
 Steps to complete once ready to publish a release.
 
-1. Go through [`pyproject.toml`](pyproject.toml) and update the relevant fields
-2. In [`tox.ini`](tox.ini), uncomment `testenv` commands
+1. Go through [`pyproject.toml`](https://github.com/patrick-5546/sampleproject/blob/main/pyproject.toml) and update the
+   relevant fields
+2. In [`tox.ini`](https://github.com/patrick-5546/sampleproject/blob/main/tox.ini), uncomment `testenv` commands
 3. In this file, uncomment badges and uncomment and update their URLs with the package name where applicable
 4. Create a repository secret named "PYPI_API_TOKEN" with the corresponding value
 5. Releases will be pushed to PyPI once they are published on GitHub
