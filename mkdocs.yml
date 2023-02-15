@@ -123,7 +123,8 @@ nav:
     - GitHub Actions Integration: developer_guide/github_actions.md
     - VS Code Integration: developer_guide/vscode.md
 
-# Live reloading for paths other than 'docs' and 'mkdocs.yml'
+# Live reloading for snippets of files outside the 'docs/' directory
 watch:
+- CONTRIBUTING.md
 - LICENSE
 - README.md

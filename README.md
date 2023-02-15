@@ -56,7 +56,10 @@ may be appropriate.
 
 ## Using this Template Repository
 
-Things to do after creating a repository using this template.
+This fork of [pypa/sampleproject](https://github.com/pypa/sampleproject) adds pinned dependency management, a
+documentation site, VS Code integration, improved GitHub integration, and much more.
+
+After creating a repository using this template, some files need to be updated to make it your own:
 
 ### Update Repository and Package Names
 
@@ -74,7 +77,7 @@ Things to do after creating a repository using this template.
 4. In [`.github/workflows/tests.yml`](https://github.com/patrick-5546/sampleproject/blob/main/.github/workflows/test.yml),
    update the "Make badge" step of "Coverage" with the repository owner, repository name, and gist ID where applicable
 5. Create a GitHub personal access token with the "gist" scope and copy its value
-6. Create a repository secret named "GIST_TOKEN" and paste the token
+6. Create a repository secret named `GIST_TOKEN` and paste the token
 
 ### Update Infrastructure
 
