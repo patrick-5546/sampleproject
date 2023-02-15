@@ -41,9 +41,9 @@ Each tox environment defined there accomplishes a specific purpose:
 
 Known issues running tox environments:
 
-| Environment | Issue                                           | Solution                     |
-| ----------- | ----------------------------------------------- | ---------------------------- |
-| `coverage`  | `coverage combine` outputs "No data to combine" | Delete `.coverage` and rerun |
+| Environment | Issue                                           | Solution                                                                                                                                                              |
+| ----------- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `coverage`  | `coverage combine` outputs "No data to combine" | `coverage` cannot be run independently, as it needs `.coverage` from `testenv`: run `tox` instead. If you are still getting this error, remove `.coverage` and rerun. |
 
 #### Tox Development Environments
 
