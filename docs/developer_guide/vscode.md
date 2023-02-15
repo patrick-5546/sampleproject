@@ -1,17 +1,11 @@
 # VS Code
 
-## Setup VS Code
-
-To use this repository's VS Code integration, all its dependencies must be installed.
-This can be done in a virtual environment.
+## Setup for VS Code
 
 1. `cd` to the root directory of the repository
-2. Create the development environment: `tox devenv -e dev .venv`
+2. Create the `dev` [development environment](./contributing.md#tox-development-environments)
 3. Open the repository in VS Code: `code .`
-4. Use the development environment:
-   [activate Python virtual environments](https://realpython.com/python-virtual-environments-a-primer/#activate-it)
-    - Once the Python extension is installed, this should be done automatically
-      whenever a new terminal is created
+4. Install the recommended extensions
 
 ## Configuration Files
 

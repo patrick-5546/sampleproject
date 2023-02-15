@@ -1,5 +1,11 @@
 # Docs
 
+The Docs were created using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/),
+a Markdown static site generator with a material design theme. Consult their
+[Setup](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/) and
+[Reference](https://squidfunk.github.io/mkdocs-material/reference/) docs pages for a
+comprehensive list of available features.
+
 ## Running Docs Locally
 
 1. Create and use the `dev` [development environment](./contributing.md#tox-development-environments)
