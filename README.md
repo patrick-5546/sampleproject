@@ -69,24 +69,22 @@ After creating a repository using this template, some files need to be updated t
 
 ### Update README Badges
 
-1. In [`README.md`](https://raw.githubusercontent.com/patrick-5546/sampleproject/main/README.md),
-   update `testbadge`, `testfile`, `licensebadge`, and `licenseurl` with the repository owner and name where applicable
+1. In `README.md`, update `testbadge`, `testfile`, `licensebadge`, and `licenseurl` with the
+   repository owner and name where applicable
 2. Create an empty gist named `covbadge.json` and copy its ID
-3. In [`README.md`](https://raw.githubusercontent.com/patrick-5546/sampleproject/main/README.md),
-   update `covbadge` with the repository owner and gist ID where applicable
-4. In [`.github/workflows/tests.yml`](https://github.com/patrick-5546/sampleproject/blob/main/.github/workflows/test.yml),
-   update the "Make badge" step of "Coverage" with the repository owner, repository name, and gist ID where applicable
+3. In `README.md`, update `covbadge` with the repository owner and gist ID where applicable
+4. In `.github/workflows/tests.yml`, update the "Make badge" step of "Coverage" with the
+   repository owner, repository name, and gist ID where applicable
 5. Create a GitHub personal access token with the "gist" scope and copy its value
 6. Create a repository secret named `GIST_TOKEN` and paste the token
 
 ### Update Infrastructure
 
-1. In [`.github/CODEOWNERS`](https://github.com/patrick-5546/sampleproject/blob/main/.github/CODEOWNERS), update code
-   owners accordingly
+1. In `.github/CODEOWNERS`, update code owners accordingly
 
 ### Update README
 
-In [`README.md`](https://raw.githubusercontent.com/patrick-5546/sampleproject/main/README.md):
+In `README.md`:
 
 1. Update the title
 2. Delete everything after the badge URLs
