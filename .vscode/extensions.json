@@ -19,6 +19,7 @@
         "tamasfe.even-better-toml",
         "tushortz.python-extended-snippets",
         "visualstudioexptteam.intellicode-api-usage-examples",
-        "visualstudioexptteam.vscodeintellicode"
+        "visualstudioexptteam.vscodeintellicode",
+        "yzhang.markdown-all-in-one"
     ]
 }
