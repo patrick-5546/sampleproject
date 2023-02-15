@@ -93,7 +93,8 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      check_paths: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -107,4 +108,21 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Home: index.md
+  - Home:
+    - index.md
+    - License: license.md
+  - User Guide:
+    - Installation: user_guide/installation.md
+    - Getting Started: user_guide/getting_started.md
+    - Commands: user_guide/commands.md
+    - Configuration: user_guide/configuration.md
+  - Developer Guide:
+    - Contributing: developer_guide/contributing.md
+    - VS Code Integration: developer_guide/vscode.md
+    - GitHub Actions Integration: developer_guide/github_actions.md
+    - Creating a Release: developer_guide/release.md
+
+# Live reloading for paths other than 'docs' and 'mkdocs.yml'
+watch:
+- LICENSE
+- README.md

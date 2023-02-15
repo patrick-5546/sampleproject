@@ -12,6 +12,7 @@
         "linenums",
         "materialx",
         "mathjax",
+        "mkdocs",
         "mypy",
         "pymdownx",
         "PYPI",

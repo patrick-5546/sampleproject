@@ -38,7 +38,7 @@ usage examples, etc. Generally, including the project changelog in here is not a
 good idea, although a simple “What's New” section for the most recent version
 may be appropriate.
 
-## Initializing the repository
+## Using this Template Repository
 
 Steps to complete after using this template to create a repository.
 
