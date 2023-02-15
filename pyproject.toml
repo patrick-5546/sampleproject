@@ -115,6 +115,7 @@ dependencies = [ # Optional
 # projects.
 [project.optional-dependencies] # Optional
 docs = [
+  "mkdocs-coverage",
   "mkdocs-git-revision-date-localized-plugin",
   "mkdocs-material"
 ]

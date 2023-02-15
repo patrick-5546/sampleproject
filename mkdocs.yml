@@ -43,8 +43,11 @@ theme:
 
 # Plugins
 plugins:
+  - coverage
   - git-revision-date-localized:
       timezone: America/Vancouver
+      exclude:
+        - coverage.md
   - offline
   - search:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
@@ -122,6 +125,7 @@ nav:
     - Releases: developer_guide/releases.md
     - GitHub Actions Integration: developer_guide/github_actions.md
     - VS Code Integration: developer_guide/vscode.md
+    - Coverage Report: coverage.md
 
 # Live reloading for snippets of files outside the 'docs/' directory
 watch:
