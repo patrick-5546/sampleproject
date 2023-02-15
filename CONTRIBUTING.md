@@ -1,8 +1,7 @@
 # Contributing
 
 This repository's infrastructure features pinned dependency management, a documentation site, an automated release process,
-GitHub integration, VS Code integration, and much more. It uses [tox](https://tox.wiki/en/latest/index.html) to
-automate and standardize testing across local development environments and CI/CD pipelines.
+GitHub integration, VS Code integration, and much more.
 
 ## Setup for Local Development
 
@@ -10,6 +9,9 @@ automate and standardize testing across local development environments and CI/CD
 2. Clone the repository
 
 ## Tox
+
+[tox](https://tox.wiki/en/latest/index.html) is used to automate and standardize testing across
+local development environments and CI/CD pipelines.
 
 ### Tox Configuration
 
