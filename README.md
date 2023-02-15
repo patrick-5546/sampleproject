@@ -56,10 +56,12 @@ may be appropriate.
 
 ## Using this Template Repository
 
-This fork of [pypa/sampleproject](https://github.com/pypa/sampleproject) adds pinned dependency management, a
-documentation site, VS Code integration, improved GitHub integration, and much more.
+This fork of [pypa/sampleproject](https://github.com/pypa/sampleproject) adds
+pinned dependency management, a documentation site, VS Code integration,
+improved GitHub integration, and much more.
 
-After creating a repository using this template, some files need to be updated to make it your own:
+After creating a repository using this template, some files need to be updated to
+make it your own:
 
 ### Update Repository and Package Names
 
@@ -69,8 +71,8 @@ After creating a repository using this template, some files need to be updated t
 
 ### Update README Badges
 
-1. In `README.md`, update `testbadge`, `testfile`, `licensebadge`, and `licenseurl` with the
-   repository owner and name where applicable
+1. In `README.md`, update `testbadge`, `testfile`, `licensebadge`, and `licenseurl`
+   with the repository owner and name where applicable
 2. Create an empty gist named `covbadge.json` and copy its ID
 3. In `README.md`, update `covbadge` with the repository owner and gist ID where applicable
 4. In `.github/workflows/tests.yml`, update the "Make badge" step of "Coverage" with the

@@ -1,7 +1,8 @@
 # Contributing
 
-This repository's infrastructure features pinned dependency management, a documentation site, an automated release process,
-GitHub integration, VS Code integration, and much more.
+This repository's infrastructure features pinned dependency management,
+a documentation site, an automated release process, GitHub integration, VS Code integration,
+and much more.
 
 ## Setup for Local Development
 
@@ -10,8 +11,8 @@ GitHub integration, VS Code integration, and much more.
 
 ## Tox
 
-[tox](https://tox.wiki/en/latest/index.html) is used to automate and standardize testing across
-local development environments and CI/CD pipelines.
+[tox](https://tox.wiki/en/latest/index.html) is used to automate and standardize testing
+across local development environments and CI/CD pipelines.
 
 ### Tox Configuration
 
@@ -28,7 +29,8 @@ Each tox environment defined there accomplishes a specific purpose:
     - `html`: used to create the Coverage Report page
     - `json`: used to create the coverage badge in the README
 - `dev`: used to create a development environment with all project and environment dependencies
-    - When in the development environment, the commands that are run in each environment can be run in your terminal
+    - When in the development environment, the commands that are run in each environment
+      can be run in your terminal
 - `docs`: builds the docs to ensure that they are in a valid state
 - `format`: runs the formatters
 - `lint`: runs the linters
@@ -47,9 +49,11 @@ Known issues running tox environments:
 
 #### Tox Development Environments
 
-The `tox devenv` command will create a virtual environment and install the environment's dependencies in it.
+The `tox devenv` command will create a virtual environment and install the environment's
+dependencies in it.
 
-- To create a virtual environment with all project and environment dependencies, run `tox devenv -e dev .venv`.
+- To create a virtual environment with all project and environment dependencies,
+  run `tox devenv -e dev .venv`.
 - Using a virtual environment: [activate Python virtual environments](https://realpython.com/python-virtual-environments-a-primer/#activate-it)
 
 ## Dependencies
@@ -60,9 +64,11 @@ The pinned dependencies can be found in `requirements/`.
 
 ### How to Add a Dependency
 
-1. Add the dependency to `pyproject.toml`; where you add the dependency depends on what type of dependency it is:
+1. Add the dependency to `pyproject.toml`; where you add the dependency depends on what
+   type of dependency it is:
     - Add project dependencies to the `dependencies` list
-    - Add [environment](#tox-environments)-specific dependencies to the corresponding list below `[project.optional-dependencies]`
+    - Add [environment](#tox-environments)-specific dependencies to the corresponding list
+      below `[project.optional-dependencies]`
 2. Run the `upgrade` tox environment: `tox -e upgrade`
 3. If you are using the development environment, [recreate it](#tox-development-environments)
 4. Commit and push the changes
