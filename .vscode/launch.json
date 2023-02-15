@@ -10,31 +10,46 @@
                 "serve"
             ],
             "console": "internalConsole",
-            "internalConsoleOptions": "openOnSessionStart"
+            "internalConsoleOptions": "openOnSessionStart",
+            "presentation": {
+                "order": 3
+            }
         },
         {
             "name": "Launch Chrome",
             "request": "launch",
             "type": "chrome",
             "url": "http://localhost:8000",
+            "presentation": {
+                "hidden": true
+            }
         },
         {
             "name": "Launch Edge",
             "request": "launch",
             "type": "msedge",
-            "url": "http://localhost:8000"
+            "url": "http://localhost:8000",
+            "presentation": {
+                "hidden": true
+            }
         }
     ],
     "compounds": [
         {
             "name": "Open Docs in Chrome",
             "configurations": ["Serve Docs", "Launch Chrome"],
-            "stopAll": true
+            "stopAll": true,
+            "presentation": {
+                "order": 1
+            }
         },
         {
             "name": "Open Docs in Edge",
             "configurations": ["Serve Docs", "Launch Edge"],
-            "stopAll": true
+            "stopAll": true,
+            "presentation": {
+                "order": 2
+            }
         }
     ]
 }
