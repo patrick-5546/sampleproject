@@ -1,37 +1,60 @@
 # Contributing
 
-## Setup
+This repository's infrastructure features pinned dependency management, a documentation site, an automated release process,
+GitHub integration, VS Code integration, and much more. It uses [tox](https://tox.wiki/en/latest/index.html) to
+automate and standardize testing across local development environments and CI/CD pipelines.
+
+## Setup for Local Development
 
 1. [Install tox](https://tox.wiki/en/latest/installation.html)
-2. Clone repository
-3. Create development environment: In the root directory of the repository, `tox devenv -e dev .venv`
-4. Use development environment: [activate Python virtual environments](https://realpython.com/python-virtual-environments-a-primer/#activate-it)
+2. Clone the repository
 
-## Commands
+## Tox
 
-Since all dependencies noted below are installed in the development environment,
-they can be run independently in the terminal.
+### Tox Configuration
 
-- `tox`
-    - Tests using [pytest](https://pypi.org/project/pytest/)
-    - Lint environment:
-        - Checks style using [flake8](https://pypi.org/project/flake8/)
-        - Type checks using [mypy](https://pypi.org/project/mypy/)
-    - Coverage environment: generates coverage reports using [coverage](https://pypi.org/project/coverage/)
-        - To view coverage report, open `htmlcov/index.html` in a browser
-        - If you get the error "No data to combine" while running `coverage combine`, delete `.coverage`
-- `tox -e format`
-    - Formats using [black](https://pypi.org/project/black/)
-    - Sorts dependencies using [isort](https://pypi.org/project/isort/)
-- `tox -e upgrade`
-    - Upgrade dependencies using [pip-tools](https://pypi.org/project/pip-tools/)
+The tox configuration for this repository can be found in `tox.ini`.
 
-## VS Code Integration
+### Tox Environments
 
-Relevant files can be found in  [`.vscode/`](.vscode).
+Each tox environment defined there accomplishes a specific purpose:
 
-- Recommended extensions: recommends helpful extensions to be installed
-- Pytest with coverage
-- Format on save
-- Ruler at line length limit
-- Show trailing whitespace
+- `testenv`:
+    - Checks if the package can be built (may be commented out)
+    - Runs tests and generates a coverage report source file `.coverage`
+- `coverage`: converts `.coverage` to human readable formats
+    - `html`: used to create the Coverage Report page
+    - `json`: used to create the coverage badge in the README
+- `dev`: used to create the development environment
+    - Install all dependencies in a virtual environment with `tox devenv -e dev .venv`
+    - When in the development environment, the commands that are run in each environment can be run in your terminal
+- `docs`: builds the docs to ensure that they are in a valid state
+- `format`: runs the formatters
+- `lint`: runs the linters
+- `upgrade`: syncs and upgrades the dependencies in `pyproject.toml`
+
+#### Running Tox Environments
+
+- `tox -e <environment>` will run a single environment
+- `tox` will run all the environments in `envlist`
+
+Known issues running tox environments:
+
+| Environment | Issue                                           | Solution                     |
+| ----------- | ----------------------------------------------- | ---------------------------- |
+| `coverage`  | `coverage combine` outputs "No data to combine" | Delete `.coverage` and rerun |
+
+## Dependencies
+
+Dependencies are defined in `pyproject.toml`.
+They are pinned and managed using [pip-tools](https://pip-tools.readthedocs.io/en/latest/).
+The pinned dependencies can be found in `requirements/`.
+
+### How to Add a Dependency
+
+1. Add the dependency to `pyproject.toml`; where you add the dependency depends on what type of dependency it is:
+    - Add project dependencies to the `dependencies` list
+    - Add [environment](#tox-environments)-specific dependencies to the corresponding list below `[project.optional-dependencies]`
+2. Run the `upgrade` tox environment: `tox -e upgrade`
+3. If you are using the development environment, recreate it: `tox devenv -e dev .venv`
+4. Commit and push the changes
