@@ -1,31 +1,21 @@
 {
     "cSpell.enabled": true,
     "editor.renderWhitespace": "trailing",
-
-    "[markdown]": {
-        "editor.rulers": [120],
-        "editor.unicodeHighlight.ambiguousCharacters": false,
-        "editor.unicodeHighlight.invisibleCharacters": false,
-        "diffEditor.ignoreTrimWhitespace": false,
-        "editor.wordWrap": "on",
-        "editor.quickSuggestions": {
-            "comments": "off",
-            "strings": "off",
-            "other": "off"
-        },
-        "cSpell.fixSpellingWithRenameProvider": true,
-        "cSpell.advanced.feature.useReferenceProviderWithRename": true,
-        "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+\\s/"
-    },
+    "editor.rulers": [88],
 
     "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
         "editor.wordBasedSuggestions": false,
-        "editor.rulers": [88],
+
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
-        }
+        },
+
+        "gitlens.codeLens.symbolScopes": [
+            "!Module"
+        ],
     },
     "isort.args":["--profile", "black"],
     "mypy.runUsingActiveInterpreter": true,
