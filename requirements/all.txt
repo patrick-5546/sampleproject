@@ -9,7 +9,9 @@ attrs==22.2.0
 babel==2.11.0
     # via mkdocs-git-revision-date-localized-plugin
 black==23.1.0
-    # via sampleproject (pyproject.toml)
+    # via
+    #   flake8-black
+    #   sampleproject (pyproject.toml)
 bleach==6.0.0
     # via readme-renderer
 build==0.10.0
@@ -43,6 +45,10 @@ docutils==0.19
 exceptiongroup==1.1.0
     # via pytest
 flake8==6.0.0
+    # via
+    #   flake8-black
+    #   sampleproject (pyproject.toml)
+flake8-black==0.3.6
     # via sampleproject (pyproject.toml)
 ghp-import==2.1.0
     # via mkdocs
@@ -192,6 +198,7 @@ tomli==2.0.1
     #   build
     #   check-manifest
     #   coverage
+    #   flake8-black
     #   mypy
     #   pyproject-hooks
     #   pytest

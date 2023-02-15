@@ -125,6 +125,7 @@ format = [
 ]
 lint = [
   "flake8",
+  "flake8-black",
   "mypy"
 ]
 test = [
