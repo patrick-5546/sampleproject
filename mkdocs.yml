@@ -118,7 +118,7 @@ nav:
     - Configuration: user_guide/configuration.md
   - Developer Guide:
     - Contributing: developer_guide/contributing.md
-    - Creating a Release: developer_guide/release.md
+    - Releases: developer_guide/releases.md
     - GitHub Actions Integration: developer_guide/github_actions.md
     - VS Code Integration: developer_guide/vscode.md
 
