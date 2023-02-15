@@ -4,18 +4,11 @@
     "editor.rulers": [88],
 
     "[python]": {
-        "diffEditor.ignoreTrimWhitespace": false,
-        "editor.wordBasedSuggestions": false,
-
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         },
-
-        "gitlens.codeLens.symbolScopes": [
-            "!Module"
-        ],
     },
     "isort.args":["--profile", "black"],
     "mypy.runUsingActiveInterpreter": true,
