@@ -124,8 +124,8 @@ nav:
     - Contributing: developer_guide/contributing.md
     - Docs: developer_guide/docs.md
     - VS Code: developer_guide/vscode.md
-    - Releases: developer_guide/releases.md
     - GitHub Actions: developer_guide/github_actions.md
+    - Releases: developer_guide/releases.md
 
 # Live reloading for snippets of files outside the 'docs/' directory
 watch:
