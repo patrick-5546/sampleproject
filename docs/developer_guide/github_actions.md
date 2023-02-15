@@ -1,1 +1,1 @@
-# GitHub Actions Integration
+# GitHub Actions
