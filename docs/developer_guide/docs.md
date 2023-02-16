@@ -22,4 +22,9 @@ before running `mkdocs build`. For what this does, refer to
 [mkdocstrings](https://mkdocstrings.github.io/) was used to create the Code Reference
 section of the Docs.
 
+!!! warning "incompatible `theme.features`"
+
+    mkdocstrings is not compatible with
+    [`theme.features.navigation.indexes`](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#section-index-pages).
+
 ### Versioning
