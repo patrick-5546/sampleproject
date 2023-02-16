@@ -13,10 +13,6 @@
     "flake8.args": ["--append-config=.flake8"],
     "isort.args":["--profile", "black"],
     "mypy.runUsingActiveInterpreter": true,
-    "mypy.targets": [
-        "src",
-        "tests"
-    ],
     "python.formatting.provider": "none",
     "python.testing.pytestArgs": [
         "-Wd",
