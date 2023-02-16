@@ -115,9 +115,13 @@ dependencies = [ # Optional
 # projects.
 [project.optional-dependencies] # Optional
 docs = [
+  "mkdocstrings-python",
   "mkdocs-coverage",
+  "mkdocs-gen-files",
   "mkdocs-git-revision-date-localized-plugin",
-  "mkdocs-material"
+  "mkdocs-literate-nav",
+  "mkdocs-material",
+  "mkdocs-section-index"
 ]
 format = [
   "black",
