@@ -11,6 +11,7 @@
         },
     },
     "flake8.args": ["--append-config=.flake8"],
+    "mypy.targets": [],
     "isort.args":["--profile", "black"],
     "mypy.runUsingActiveInterpreter": true,
     "python.formatting.provider": "none",
