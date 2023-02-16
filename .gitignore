@@ -17,5 +17,6 @@ __pycache__/
 !.coveragerc
 coverage.json
 
-# documentation directory
+# due to docs
+.cache/
 site/

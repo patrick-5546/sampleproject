@@ -4,6 +4,7 @@
         "cameron.vscode-pytest",
         "christian-kohler.path-intellisense",
         "davidanson.vscode-markdownlint",
+        "dawhite.mustache",
         "eamodio.gitlens",
         "kevinrose.vsc-python-indent",
         "matangover.mypy",
