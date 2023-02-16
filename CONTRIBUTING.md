@@ -35,7 +35,7 @@ Details about each environment are given below:
 - `dev`: used to create a development environment with all dependencies installed
     - When in the development environment, the commands that are run in each environment
       can be run in your terminal
-- `docs`: builds the docs to ensure that they are in a valid state
+- `docs-build`: builds the docs to ensure that they are in a valid state
 - `docs-serve`: runs the docs development server
 - `format`: runs the formatters
 - `lint`: runs the linters
