@@ -15,6 +15,9 @@ VS Code configuration files can be found in the `.vscode/` directory.
 - `cspell.json`: configuration for the spell checker
 - `extensions.json`: recommended extensions
     - See the recommended extensions by searching for "@recommended" in the Extensions view
+- `google_docstring_custom_template.mustache`: a custom docstrings template for
+  [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
+  until [this issue](https://github.com/NilsJPWerner/autoDocstring/issues/232) is resolved
 - `launch.json`: launch configurations
     - Run the launch configurations from the Run and Debug view
 - `settings.json`: settings

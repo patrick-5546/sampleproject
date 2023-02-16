@@ -10,6 +10,7 @@
             "source.organizeImports": true
         },
     },
+    "autoDocstring.customTemplatePath": ".vscode/google_docstring_custom_template.mustache",
     "flake8.args": ["--append-config=.flake8"],
     "mypy.targets": [],
     "isort.args":["--profile", "black"],
