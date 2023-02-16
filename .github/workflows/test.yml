@@ -20,6 +20,9 @@ concurrency:
 env:
   PIP_DISABLE_PIP_VERSION_CHECK: 1
 
+permissions:
+  contents: write
+
 jobs:
   tests:
     name: "Python ${{ matrix.python-version }} on ${{ matrix.os }}"
@@ -121,6 +124,7 @@ jobs:
 
   # https://github.com/nosborn/github-action-markdown-cli
   markdownlint:
+    name: Lint Markdown
     runs-on: ubuntu-latest
     needs: docs-build
     steps:
@@ -136,6 +140,7 @@ jobs:
 
   # https://github.com/gaurav-nelson/github-action-markdown-link-check
   markdown-link-check:
+    name: Check links in Markdown files
     runs-on: ubuntu-latest
     needs: docs-build
     steps:
@@ -147,3 +152,35 @@ jobs:
       with:
         config-file: '.mlc_config.json'
         folder-path: '.'
+
+  # https://squidfunk.github.io/mkdocs-material/publishing-your-site/#with-github-actions
+  docs-deploy:
+    name: Deploy Docs
+    runs-on: ubuntu-latest
+    needs: [markdownlint, markdown-link-check]
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          # checkout all commits to get accurate page revision times
+          # for the git-revision-date-localized plugin
+          fetch-depth: '0'
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+          cache: pip
+          cache-dependency-path: 'pyproject.toml'
+
+      - name: Cache downloaded files
+        uses: actions/cache@v3
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements/docs.txt
+
+      - name: Deploy MkDocs application
+        run: mkdocs gh-deploy --force
