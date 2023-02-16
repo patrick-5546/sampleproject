@@ -67,7 +67,7 @@ Related recommended extensions improve autocomplete, format on save, lint, test,
 ### Common Extensions & Settings
 
 Other recommended extensions further improve autocomplete (AI, file paths), check spelling,
-and show the commit and author who last modified the current line:
+and show the commit and author who last modified the current line, and more:
 
 - Mark a word as spelled correct by hovering over it, selecting `Quick Fix...`,
   then selecting `Add "<word>" to config: .vscode/cspell.json`

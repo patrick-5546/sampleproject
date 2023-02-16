@@ -20,15 +20,18 @@ The tox configuration for this repository can be found in `tox.ini`.
 
 ### Tox Environments
 
-Each tox environment defined there accomplishes a specific purpose:
+Each tox environment accomplishes a specific purpose.
+List all tox environments and their descriptions with `tox list`.
 
-- `testenv`:
-    - Checks if the package can be built (may be commented out)
-    - Runs tests and generates a coverage report source file `.coverage`
+Details about each environment are given below:
+
+- `py*`: for a particular python version,
+    1. checks if the package can be built (may be commented out), and
+    2. runs tests and generates a coverage report source file `.coverage`
 - `coverage`: converts `.coverage` to human readable formats
     - `html`: used to create the Coverage Report page
     - `json`: used to create the coverage badge in the README
-- `dev`: used to create a development environment with all project and environment dependencies
+- `dev`: used to create a development environment with all dependencies installed
     - When in the development environment, the commands that are run in each environment
       can be run in your terminal
 - `docs`: builds the docs to ensure that they are in a valid state
@@ -39,7 +42,8 @@ Each tox environment defined there accomplishes a specific purpose:
 #### Running Tox Environments
 
 - `tox -e <environment>` will run a single environment
-- `tox` will run all the environments in `envlist`
+- `tox` will run all the default environments as noted by `tox list`
+    - To set an environment as default, add it to `envlist` in `tox.ini`
 
 Known issues running tox environments:
 
@@ -52,7 +56,7 @@ Known issues running tox environments:
 The `tox devenv` command will create a virtual environment and install the environment's
 dependencies in it.
 
-- To create a virtual environment with all project and environment dependencies,
+- To create a virtual environment with all dependencies installed,
   run `tox devenv -e dev .venv`.
 - Using a virtual environment: [activate Python virtual environments](https://realpython.com/python-virtual-environments-a-primer/#activate-it)
 

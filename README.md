@@ -86,7 +86,7 @@ make it your own:
 
 ### Update README
 
-In `README.md`:
+In `README.md`,
 
-1. Update the title
-2. Delete everything after the badge URLs
+1. update the title and
+2. delete everything after the badge URLs
