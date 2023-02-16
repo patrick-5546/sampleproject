@@ -10,10 +10,7 @@
                 "serve"
             ],
             "console": "internalConsole",
-            "internalConsoleOptions": "openOnSessionStart",
-            "presentation": {
-                "order": 3
-            }
+            "internalConsoleOptions": "openOnSessionStart"
         },
         {
             "name": "Launch Chrome",
@@ -38,18 +35,12 @@
         {
             "name": "Open Docs in Chrome",
             "configurations": ["Serve Docs", "Launch Chrome"],
-            "stopAll": true,
-            "presentation": {
-                "order": 1
-            }
+            "stopAll": true
         },
         {
             "name": "Open Docs in Edge",
             "configurations": ["Serve Docs", "Launch Edge"],
-            "stopAll": true,
-            "presentation": {
-                "order": 2
-            }
+            "stopAll": true
         }
     ]
 }

@@ -49,9 +49,9 @@ There are also launch configurations to run the development server and open brow
 
 | Launch Configuration | Description                                         |
 | -------------------- | --------------------------------------------------- |
+| Serve Docs           | runs `mkdocs serve`                                 |
 | Open Docs in Chrome  | runs `mkdocs serve` and open Docs in Chrome         |
 | Open Docs in Edge    | runs `mkdocs serve` and open Docs in Microsoft Edge |
-| Serve Docs           | runs `mkdocs serve`                                 |
 
 ### Python
 
