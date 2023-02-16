@@ -16,3 +16,7 @@ __pycache__/
 .coverage*
 !.coveragerc
 coverage.json
+
+# due to docs
+.cache/
+site/

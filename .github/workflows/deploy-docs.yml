@@ -1,0 +1,37 @@
+name: Deploy Docs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # https://squidfunk.github.io/mkdocs-material/publishing-your-site/#with-github-actions
+  Publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          # checkout all commits to get accurate page revision times
+          # for the git-revision-date-localized plugin
+          fetch-depth: '0'
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+          cache: pip
+          cache-dependency-path: 'pyproject.toml'
+
+      - name: Cache downloaded files
+        uses: actions/cache@v3
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+
+      - name: Install dependencies
+        run: python -m pip install requirements/docs.txt
+
+      - name: Deploy MkDocs application
+        run: mkdocs gh-deploy --force

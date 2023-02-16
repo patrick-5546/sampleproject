@@ -1,22 +1,20 @@
 {
     "cSpell.enabled": true,
     "editor.renderWhitespace": "trailing",
+    "editor.rulers": [88],
 
     "[python]": {
-        "editor.wordBasedSuggestions": false,
-        "editor.rulers": [88],
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
-        }
+        },
     },
+    "autoDocstring.customTemplatePath": ".vscode/google_docstring_custom_template.mustache",
+    "flake8.args": ["--append-config=.flake8"],
+    "mypy.targets": [],
     "isort.args":["--profile", "black"],
     "mypy.runUsingActiveInterpreter": true,
-    "mypy.targets": [
-        "src",
-        "tests"
-    ],
     "python.formatting.provider": "none",
     "python.testing.pytestArgs": [
         "-Wd",
@@ -24,5 +22,16 @@
         "--cov-branch",
         "--cov-report=term-missing"
     ],
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+
+    "yaml.schemas": {
+        "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+    },
+    "yaml.customTags": [ 
+        "!ENV scalar",
+        "!ENV sequence",
+        "tag:yaml.org,2002:python/name:materialx.emoji.to_svg",
+        "tag:yaml.org,2002:python/name:materialx.emoji.twemoji",
+        "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
+    ]
 }
