@@ -17,18 +17,3 @@ comprehensive list of available features.
 To build for offline usage, uncomment the `offline` plugin in `mkdocs.yml`
 before running `mkdocs build`. For what this does, refer to
 [the related Material for Mkdocs docs page](https://squidfunk.github.io/mkdocs-material/setup/building-for-offline-usage/).
-
-## Known Issues
-
-!!! warning "`mkdocs serve` coverage report"
-
-    By default, `mkdocs serve` rebuilds all files whenever a watched file is saved.
-    However, an issue arises when it is integrated with [mkdocs-coverage](https://github.com/pawamoy/mkdocs-coverage),
-    which is used to generate the Coverage Report page: if a watched file is while
-    `mkdocs serve` is running, you will get the warning
-    `mkdocs_coverage.plugin: No such HTML report directory: htmlcov`,
-    and the Coverage Report page will not be able to be displayed.
-
-    A workaround is to use dirty reloading, which only re-builds files that have changed:
-    `mkdocs serve --dirtyreload`, however this often causes inaccurate navigation
-    and reloading behavior.
