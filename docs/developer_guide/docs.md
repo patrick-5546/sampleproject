@@ -1,10 +1,7 @@
 # Docs
 
 The Docs were created using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/),
-a Markdown static site generator with a material design theme. Consult their
-[Setup](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/) and
-[Reference](https://squidfunk.github.io/mkdocs-material/reference/) docs pages for a
-comprehensive list of available features.
+a Markdown static site generator with a material design theme.
 
 ## Running Docs Locally
 
@@ -17,3 +14,12 @@ comprehensive list of available features.
 To build for offline usage, uncomment the `offline` plugin in `mkdocs.yml`
 before running `mkdocs build`. For what this does, refer to
 [the related Material for Mkdocs docs page](https://squidfunk.github.io/mkdocs-material/setup/building-for-offline-usage/).
+
+## Features
+
+### Automatic Documentation from Sources
+
+[mkdocstrings](https://mkdocstrings.github.io/) was used to create the Code Reference
+section of the Docs.
+
+### Versioning
