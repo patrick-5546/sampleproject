@@ -99,6 +99,12 @@ jobs:
           maxColorRange: 90
           valColorRange: ${{ env.total }}
 
+      - name: "Upload HTML coverage report"
+        uses: actions/upload-artifact@v3
+        with:
+          name: htmlcov
+          path: htmlcov/*
+
   docs-build:
     name: Build Docs
     runs-on: ubuntu-latest
@@ -154,7 +160,7 @@ jobs:
   docs-deploy:
     name: Deploy Docs
     runs-on: ubuntu-latest
-    needs: [markdownlint, markdown-link-check]
+    needs: [coverage, markdownlint, markdown-link-check]
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -175,6 +181,11 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
+
+      - name: Download HTML coverage report
+        uses: actions/download-artifact@v3
+        with:
+          name: htmlcov
 
       - name: Install dependencies
         run: python -m pip install -r requirements/docs.txt
