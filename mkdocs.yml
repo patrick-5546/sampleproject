@@ -48,7 +48,14 @@ plugins:
       - docs/gen_ref_pages.py
   - git-revision-date-localized:
       timezone: America/Vancouver
-      fallback_to_build_date: true
+      exclude:
+        # generated files
+        - coverage.md
+        - reference/*
+        # files that only contain snippets of other files
+        - developer_guide/contributing.md
+        - readme.md
+        - license.md
   - literate-nav:
       nav_file: SUMMARY.md
   - mkdocstrings:
@@ -131,7 +138,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Home:
-    - README: index.md
+    - README: readme.md
     - Coverage Report: coverage.md
     - License: license.md
   - User Guide:
@@ -148,7 +155,7 @@ nav:
     - GitHub Actions: developer_guide/github_actions.md
     - Releases: developer_guide/releases.md
 
-# Live reloading for snippets of files outside the 'docs/' directory
+# Live reloading for snippets of files outside the `docs/` directory
 watch:
   - CONTRIBUTING.md
   - LICENSE
