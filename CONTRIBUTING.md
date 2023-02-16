@@ -28,6 +28,7 @@ Details about each environment are given below:
 - `py*`: for a particular python version,
     1. checks if the package can be built (may be commented out), and
     2. runs tests and generates a coverage report source file `.coverage`
+- `check-release`: checks that the package is ready to be released
 - `coverage`: converts `.coverage` to human readable formats
     - `html`: used to create the Coverage Report page
     - `json`: used to create the coverage badge in the README

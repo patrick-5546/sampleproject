@@ -114,6 +114,11 @@ dependencies = [ # Optional
 # Similar to `dependencies` above, these must be valid existing
 # projects.
 [project.optional-dependencies] # Optional
+check-release = [ 
+  "build",
+  "check-manifest",
+  "twine"
+]
 docs = [
   "mkdocstrings-python",
   "mkdocs-coverage",
@@ -133,15 +138,12 @@ lint = [
   "mypy"
 ]
 test = [
-  "build",
-  "check-manifest",
   "coverage",
   "pytest",
-  "pytest-sugar",
-  "twine"
+  "pytest-cov",
+  "pytest-sugar"
 ]
 upgrade = ["pip-tools"]
-vscode = ["pytest-cov"]
 
 # List URLs that are relevant to your project
 #
