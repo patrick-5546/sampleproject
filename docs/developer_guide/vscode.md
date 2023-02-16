@@ -3,7 +3,8 @@
 ## Setup for VS Code
 
 1. `cd` to the root directory of the repository
-2. Create the `dev` [development environment](./contributing.md#tox-development-environments)
+2. Create the `dev` [development environment](./contributing.md#tox-development-environments):
+   `tox devenv -e dev .venv`
 3. Open the repository in VS Code: `code .`
 4. Install the recommended extensions
 

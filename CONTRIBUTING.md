@@ -68,13 +68,14 @@ Dependencies are defined in `pyproject.toml`.
 They are pinned and managed using [pip-tools](https://pip-tools.readthedocs.io/en/latest/).
 The pinned dependencies can be found in `requirements/`.
 
-### How to Add a Dependency
+### How to Add or Update Dependencies
 
-1. Add the dependency to `pyproject.toml`; where you add the dependency depends on what
-   type of dependency it is:
+1. To add a dependency, add it in `pyproject.toml`;
+   where you add the dependency depends on what type of dependency it is:
     - Add project dependencies to the `dependencies` list
     - Add [environment](#tox-environments)-specific dependencies to the corresponding list
       below `[project.optional-dependencies]`
 2. Run the `upgrade` tox environment: `tox -e upgrade`
-3. If you are using the development environment, [recreate it](#tox-development-environments)
-4. Commit and push the changes
+3. Verify that the tests still pass: `tox`
+4. If you are using the development environment, recreate it: `tox devenv -e dev .venv`
+5. Commit and push the changes
