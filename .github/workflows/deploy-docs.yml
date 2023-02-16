@@ -5,9 +5,20 @@ on:
     branches:
       - main
 
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+env:
+  PIP_DISABLE_PIP_VERSION_CHECK: 1
+
+permissions:
+  contents: write
+
 jobs:
   # https://squidfunk.github.io/mkdocs-material/publishing-your-site/#with-github-actions
-  Publish:
+  docs-deploy:
+    name: Deploy Docs
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
@@ -31,7 +42,7 @@ jobs:
           path: .cache
 
       - name: Install dependencies
-        run: python -m pip install requirements/docs.txt
+        run: python -m pip install -r requirements/docs.txt
 
       - name: Deploy MkDocs application
         run: mkdocs gh-deploy --force
