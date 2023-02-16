@@ -66,7 +66,7 @@ plugins:
             line_length: 88
             # signatures/annotations
             separate_signature: yes
-  - offline
+  # - offline
   - search:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - section-index

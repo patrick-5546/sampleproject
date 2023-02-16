@@ -12,6 +12,12 @@ comprehensive list of available features.
 2. Run the development server: `mkdocs serve`
     - If you are using VS Code, see the [VS Code Integration page](./vscode.md#docs)
 
+## Building for Offline Usage
+
+To build for offline usage, uncomment the `offline` plugin in `mkdocs.yml`
+before running `mkdocs build`. For what this does, refer to
+[the related Material for Mkdocs docs page](https://squidfunk.github.io/mkdocs-material/setup/building-for-offline-usage/).
+
 ## Known Issues
 
 !!! warning "`mkdocs serve` coverage report"
