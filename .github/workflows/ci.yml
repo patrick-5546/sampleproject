@@ -25,6 +25,7 @@ jobs:
   tests:
     name: "Run tests using python-${{ matrix.python-version }} on ${{ matrix.os }}"
     runs-on: "${{ matrix.os }}"
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
 
     strategy:
       fail-fast: false
@@ -59,6 +60,7 @@ jobs:
     name: Coverage
     needs: tests
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
     steps:
       - name: "Check out the repo"
         uses: "actions/checkout@v3"
@@ -109,6 +111,7 @@ jobs:
   docs-build:
     name: Build Docs
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
     steps:
       - name: "Check out the repo"
         uses: "actions/checkout@v3"
@@ -130,6 +133,7 @@ jobs:
   markdownlint:
     name: Lint Markdown
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
     needs: docs-build
     steps:
     - name: Check out code
@@ -146,6 +150,7 @@ jobs:
   markdown-link-check:
     name: Check links in Markdown files
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
     needs: docs-build
     steps:
     - name: Check out code
@@ -159,8 +164,9 @@ jobs:
 
   # https://squidfunk.github.io/mkdocs-material/publishing-your-site/#with-github-actions
   docs-deploy:
-    name: Deploy Docs
+    name: Deploy Docs version
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
     needs: [coverage, markdownlint, markdown-link-check]
     steps:
       - name: Check out code
@@ -192,23 +198,26 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements/docs.txt
 
-      - name: Deploy pr-${{ github.event.number }} version of Docs
-        if: github.event_name == 'pull_request' && github.event.action != 'closed'
+      - name: Deploy pr-${{ github.event.number }} version of the Docs
+        if: github.event_name == 'pull_request'
         run: |
           git config user.name ci-bot
           git config user.email ci-bot@example.com
           mike deploy --push pr-${{ github.event.number }}
 
-      - name: Delete pr-${{ github.event.number }} version of Docs
-        if: github.event_name == 'pull_request' && github.event.action == 'closed'
-        run: |
-          git config user.name ci-bot
-          git config user.email ci-bot@example.com
-          mike delete --push pr-${{ github.event.number }}
-
-      - name: Deploy main version of Docs
-        if: github.ref == 'refs/heads/main'
+      - name: Deploy main version of the Docs
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: |
           git config user.name ci-bot
           git config user.email ci-bot@example.com
           mike deploy --push --update-aliases main latest
+
+  docs-delete:
+    name: Delete pr-${{ github.event.number }} version of the Docs
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    steps:
+      - run: |
+          git config user.name ci-bot
+          git config user.email ci-bot@example.com
+          mike delete --push pr-${{ github.event.number }}
