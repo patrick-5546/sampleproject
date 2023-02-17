@@ -1,10 +1,8 @@
-# this file is *not* meant to cover or endorse the use of GitHub Actions, but rather to
-# help test this project
-
-name: Test
+name: CI
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, closed]
   push:
     branches:
       - main
@@ -20,10 +18,14 @@ concurrency:
 env:
   PIP_DISABLE_PIP_VERSION_CHECK: 1
 
+permissions:
+  contents: write
+
 jobs:
   tests:
-    name: "Python ${{ matrix.python-version }} on ${{ matrix.os }}"
+    name: "Run tests using python-${{ matrix.python-version }} on ${{ matrix.os }}"
     runs-on: "${{ matrix.os }}"
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
 
     strategy:
       fail-fast: false
@@ -58,6 +60,7 @@ jobs:
     name: Coverage
     needs: tests
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
     steps:
       - name: "Check out the repo"
         uses: "actions/checkout@v3"
@@ -99,9 +102,16 @@ jobs:
           maxColorRange: 90
           valColorRange: ${{ env.total }}
 
+      - name: "Upload HTML coverage report"
+        uses: actions/upload-artifact@v3
+        with:
+          name: htmlcov
+          path: htmlcov/
+
   docs-build:
     name: Build Docs
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
     steps:
       - name: "Check out the repo"
         uses: "actions/checkout@v3"
@@ -121,7 +131,9 @@ jobs:
 
   # https://github.com/nosborn/github-action-markdown-cli
   markdownlint:
+    name: Lint Markdown
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
     needs: docs-build
     steps:
     - name: Check out code
@@ -136,7 +148,9 @@ jobs:
 
   # https://github.com/gaurav-nelson/github-action-markdown-link-check
   markdown-link-check:
+    name: Check links in Markdown files
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
     needs: docs-build
     steps:
     - name: Check out code
@@ -147,3 +161,63 @@ jobs:
       with:
         config-file: '.mlc_config.json'
         folder-path: '.'
+
+  # https://squidfunk.github.io/mkdocs-material/publishing-your-site/#with-github-actions
+  docs-deploy:
+    name: Deploy Docs version
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
+    needs: [coverage, markdownlint, markdown-link-check]
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          # checkout all commits to get accurate page revision times
+          # for the git-revision-date-localized plugin
+          fetch-depth: '0'
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+          cache: pip
+          cache-dependency-path: 'pyproject.toml'
+
+      - name: Cache downloaded files
+        uses: actions/cache@v3
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+
+      - name: Download HTML coverage report
+        uses: actions/download-artifact@v3
+        with:
+          name: htmlcov
+          path: htmlcov
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements/docs.txt
+
+      - name: "Deploy pr-${{ github.event.number }} version of the Docs"
+        if: github.event_name == 'pull_request'
+        run: |
+          git config user.name ci-bot
+          git config user.email ci-bot@example.com
+          mike deploy --push pr-${{ github.event.number }}
+
+      - name: Deploy main version of the Docs
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name ci-bot
+          git config user.email ci-bot@example.com
+          mike deploy --push --update-aliases main latest
+
+  docs-delete:
+    name: "Delete pr-${{ github.event.number }} version of the Docs"
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    steps:
+      - run: |
+          git config user.name ci-bot
+          git config user.email ci-bot@example.com
+          mike delete --push pr-${{ github.event.number }}

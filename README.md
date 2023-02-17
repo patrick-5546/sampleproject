@@ -84,6 +84,22 @@ make it your own:
 
 1. In `.github/CODEOWNERS`, update code owners accordingly
 
+## Setup Docs
+
+Some manual setup is required to publish the Docs using GitHub pages:
+
+1. Setup the `main` version of the Docs
+   1. Create and use the `dev` [development environment](./CONTRIBUTING.md#tox-development-environments),
+      running the commands below in it
+   2. Switch to the main branch if you are not already in it: `git switch main`
+   3. Create the `main` version and alias it to `latest`:
+      `mike deploy --update-aliases main latest`
+   4. Make `latest` the default version: `mike set-default latest`
+   5. Push the `gh-pages` branch: `git switch gh-pages` then `git push`
+2. In the repository settings for Pages, set the branch to `gh-pages`
+
+For more details about versioning, search for "versioning" in the Docs.
+
 ### Update README
 
 In `README.md`,
