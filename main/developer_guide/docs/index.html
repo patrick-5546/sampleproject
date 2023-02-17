@@ -88,6 +88,22 @@
       
     </div>
     
+      <div data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+  You're not viewing the latest version.
+  <a href="../../.."> 
+    <strong>Click here to go to latest.</strong>
+  </a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
     
       
 
@@ -882,6 +898,24 @@ section of the Docs.</p>
 <a href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#section-index-pages"><code>theme.features.navigation.indexes</code></a>.</p>
 </div>
 <h3 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">&para;</a></h3>
+<p>The Docs site has the following versions:</p>
+<ul>
+<li>Version from branches<ul>
+<li><code>main</code>: aliased to <code>latest</code><ul>
+<li>Whenever you are on a version other than <code>latest</code>, a warning will be displayed
+  above the header</li>
+</ul>
+</li>
+<li><code>pr-&lt;pr number&gt;</code>:<ul>
+<li>Created when a pull request is opened</li>
+<li>Updated when the pull request commits are modified</li>
+<li>Deleted when the pull request is closed</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Version from releases: <code>&lt;x.x&gt;</code></li>
+</ul>
 
   <hr>
 <div class="md-source-file">
@@ -998,7 +1032,7 @@ section of the Docs.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.4b2c34cd.min.js"></script>

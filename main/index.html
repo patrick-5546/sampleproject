@@ -86,6 +86,22 @@
       
     </div>
     
+      <div data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+  You're not viewing the latest version.
+  <a href="../."> 
+    <strong>Click here to go to latest.</strong>
+  </a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
     
       
 
@@ -415,6 +431,19 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-docs" class="md-nav__link">
+    Setup Docs
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Docs">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#update-readme" class="md-nav__link">
@@ -811,6 +840,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-docs" class="md-nav__link">
+    Setup Docs
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Docs">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#update-readme" class="md-nav__link">
     Update README
@@ -857,7 +899,7 @@
 
 <h1 id="a-sample-python-project">A sample Python project<a class="headerlink" href="#a-sample-python-project" title="Permanent link">&para;</a></h1>
 <!-- [![PyPI][versionbadge]][packageurl] -->
-<p><a href="https://github.com/patrick-5546/sampleproject/actions/workflows/test.yml"><img alt="Test" src="https://github.com/patrick-5546/sampleproject/actions/workflows/test.yml/badge.svg" /></a>
+<p><a href="https://github.com/patrick-5546/sampleproject/actions/workflows/ci.yml"><img alt="Test" src="https://github.com/patrick-5546/sampleproject/actions/workflows/ci.yml/badge.svg" /></a>
 <img alt="Coverage" src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/patrick-5546/845b19d91f3d03c94677f6fae6eb414c/raw/covbadge.json" /></p>
 <!-- ![PyPI - Python Version][pyversionbadge] -->
 <p><a href="https://github.com/patrick-5546/sampleproject/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/patrick-5546/sampleproject" /></a></p>
@@ -912,6 +954,20 @@ make it your own:</p>
 <ol>
 <li>In <code>.github/CODEOWNERS</code>, update code owners accordingly</li>
 </ol>
+<h2 id="setup-docs">Setup Docs<a class="headerlink" href="#setup-docs" title="Permanent link">&para;</a></h2>
+<p>Some manual setup is required to publish the Docs using GitHub pages:</p>
+<ol>
+<li>Setup the <code>main</code> version of the Docs</li>
+<li>Create and use the <code>dev</code> <a href="./CONTRIBUTING.md#tox-development-environments">development environment</a>,
+      running the commands below in it</li>
+<li>Switch to the main branch if you are not already in it: <code>git switch main</code></li>
+<li>Create the <code>main</code> version and alias it to <code>latest</code>:
+      <code>mike deploy --update-aliases main latest</code></li>
+<li>Make <code>latest</code> the default version: <code>mike set-default latest</code></li>
+<li>Push the <code>gh-pages</code> branch: <code>git switch gh-pages</code> then <code>git push</code></li>
+<li>In the repository settings for Pages, set the branch to <code>gh-pages</code></li>
+</ol>
+<p>For more details about versioning, search for "versioning" in the Docs.</p>
 <h3 id="update-readme">Update README<a class="headerlink" href="#update-readme" title="Permanent link">&para;</a></h3>
 <p>In <code>README.md</code>,</p>
 <ol>
@@ -1008,7 +1064,7 @@ make it your own:</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="assets/javascripts/bundle.4b2c34cd.min.js"></script>
