@@ -193,6 +193,8 @@ jobs:
 
       - name: Deploy MkDocs application with versioning
         run: |
+          git config user.name ci-bot
+          git config user.email ci-bot@example.com
           mike delete --all
           mike deploy --push devel-update_docs latest
           mike set-default latest
