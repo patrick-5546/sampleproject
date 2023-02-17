@@ -13,6 +13,7 @@ edit_uri: "edit/main/docs/"
 # Configuration
 theme:
   name: material
+  custom_dir: docs/overrides
   features:
     - content.action.edit
     - content.action.view
@@ -85,6 +86,8 @@ extra:
       link: https://github.com/patrick-5546
     - icon: material/email
       link: mailto:author@example.com
+  version:
+    provider: mike
 
 extra_javascript:
   - javascripts/mathjax.js
