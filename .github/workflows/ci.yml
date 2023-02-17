@@ -186,6 +186,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: htmlcov
+          path: htmlcov
 
       - name: Display structure of downloaded files
         run: |
