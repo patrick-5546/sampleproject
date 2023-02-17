@@ -22,7 +22,7 @@ permissions:
 
 jobs:
   tests:
-    name: "Python ${{ matrix.python-version }} on ${{ matrix.os }}"
+    name: "Run tests using python-${{ matrix.python-version }} on ${{ matrix.os }}"
     runs-on: "${{ matrix.os }}"
 
     strategy:
