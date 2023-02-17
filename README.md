@@ -89,7 +89,7 @@ make it your own:
 Some manual setup is required to publish the Docs using GitHub pages:
 
 1. Setup the `main` version of the Docs
-   1. Create and use the `dev` [development environment](./CONTRIBUTING.md#tox-development-environments),
+   1. Create and use the `dev` [development environment](https://patrick-5546.github.io/sampleproject/main/developer_guide/contributing/#tox-development-environments),
       running the commands below in it
    2. Switch to the main branch if you are not already in it: `git switch main`
    3. Create the `main` version and alias it to `latest`:
