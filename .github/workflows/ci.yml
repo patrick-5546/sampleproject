@@ -47,7 +47,7 @@ jobs:
       - name: "Install dependencies"
         run: python -m pip install tox tox-gh-actions
 
-      - name: "Run tox for ${{ matrix.python-version }}"
+      - name: "Run tox for python-${{ matrix.python-version }} on ${{ matrix.os }}"
         run: python -m tox
 
       - name: "Upload coverage data"
@@ -57,7 +57,7 @@ jobs:
           path: .coverage.*
 
   coverage:
-    name: Coverage
+    name: Generate code coverage reports
     needs: tests
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request' || github.event.action != 'closed'
@@ -75,19 +75,19 @@ jobs:
       - name: "Install dependencies"
         run: python -m pip install tox tox-gh-actions
 
-      - name: "Download coverage data"
+      - name: "Download coverage data from tests"
         uses: actions/download-artifact@v3
         with:
           name: covdata
 
-      - name: "Combine"
+      - name: "Combine coverage data from tests"
         run: |
           python -m tox -e coverage
           export TOTAL=$(python -c "import json;print(json.load(open('coverage.json'))['totals']['percent_covered_display'])")
           echo "total=$TOTAL" >> $GITHUB_ENV
           echo "### Total coverage: ${TOTAL}%" >> $GITHUB_STEP_SUMMARY
 
-      - name: "Make badge"
+      - name: "Make coverage badge"
         if: (github.repository == 'patrick-5546/sampleproject') && (github.ref == 'refs/heads/main')
         # https://gist.github.com/patrick-5546/845b19d91f3d03c94677f6fae6eb414c
         uses: schneegans/dynamic-badges-action@v1.6.0
@@ -213,7 +213,7 @@ jobs:
           mike deploy --push --update-aliases main latest
 
   docs-delete:
-    name: "Delete pr-${{ github.event.number }} version of the Docs"
+    name: Delete Docs version
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     steps:
@@ -233,7 +233,8 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements/docs.txt
 
-      - run: |
+      - name: "Delete pr-${{ github.event.number }} version of the Docs"
+        run: |
           git config user.name ci-bot
           git config user.email ci-bot@example.com
           mike delete --push pr-${{ github.event.number }}
