@@ -2,6 +2,7 @@ name: CI
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, closed]
   push:
     branches:
       - main
@@ -191,10 +192,23 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements/docs.txt
 
-      - name: Deploy MkDocs application with versioning
+      - name: Deploy pr-${{ github.event.number }} version of Docs
+        if: github.event_name == 'pull_request' && github.event.action != 'closed'
         run: |
           git config user.name ci-bot
           git config user.email ci-bot@example.com
-          mike delete --all
-          mike deploy --push devel-update_docs latest
-          mike set-default latest
+          mike deploy --push pr-${{ github.event.number }}
+
+      - name: Delete pr-${{ github.event.number }} version of Docs
+        if: github.event_name == 'pull_request' && github.event.action == 'closed'
+        run: |
+          git config user.name ci-bot
+          git config user.email ci-bot@example.com
+          mike delete --push pr-${{ github.event.number }}
+
+      - name: Deploy main version of Docs
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name ci-bot
+          git config user.email ci-bot@example.com
+          mike deploy --push --update-aliases main latest

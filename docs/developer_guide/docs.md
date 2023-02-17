@@ -28,3 +28,15 @@ section of the Docs.
     [`theme.features.navigation.indexes`](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#section-index-pages).
 
 ### Versioning
+
+The Docs site has the following versions:
+
+- Version from branches
+    - `main`: aliased to `latest`
+        - Whenever you are on a version other than `latest`, a warning will be displayed
+          above the header
+    - `pr-<pr number>`:
+        - Created when a pull request is opened
+        - Updated when the pull request commits are modified
+        - Deleted when the pull request is closed
+- Version from releases: `<x.x>`
