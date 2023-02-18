@@ -85,7 +85,7 @@ urllib3==1.26.14
     #   twine
 webencodings==0.5.1
     # via bleach
-zipp==3.13.0
+zipp==3.14.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:

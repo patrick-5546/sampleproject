@@ -16,7 +16,7 @@ flake8-black==0.3.6
     # via sampleproject (pyproject.toml)
 mccabe==0.7.0
     # via flake8
-mypy==1.0.0
+mypy==1.0.1
     # via sampleproject (pyproject.toml)
 mypy-extensions==1.0.0
     # via
