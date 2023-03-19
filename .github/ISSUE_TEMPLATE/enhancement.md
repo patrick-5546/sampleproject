@@ -1,20 +1,23 @@
 ---
-name: Enhancement
-about: New feature or request
+name: "🚀 Enhancement Proposal"
+about: "New feature or request"
 title: ''
 labels: enhancement
 assignees: ''
 
 ---
 
-### Purpose
-<!-- Why is this feature being implemented? Describe what lead to this feature being perceived. -->
-
-
 ### Description
-<!-- Describe the enhancement/new feature that will be added. How does it make our project better? -->
+<!-- Provide a clear and concise description of the enhancement -->
 
 
-### Resources
-<!-- Link to any extra resources that might help with the enhancements and describe the relevance if not obvious. -->
-- 
+### Purpose
+<!-- Why is this enhancement being proposed? -->
+
+
+### Possible Implementation
+<!-- Not obligatory, but suggest how the enhancement can be implemented -->
+
+
+### Additional Context
+<!-- Add any other relevant information about the enhancement here -->
