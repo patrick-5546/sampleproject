@@ -1,6 +1,6 @@
 ---
-name: Bug
-about: Something isn't working
+name: "🐞 Bug Report"
+about: "Something isn't working"
 title: ''
 labels: bug
 assignees: ''
@@ -8,29 +8,24 @@ assignees: ''
 ---
 
 ### Description
-<!-- Add a description of the bug. What went wrong and what did you observe? -->
+<!-- Provide a clear and concise description of the bug -->
 
 
 #### Expected Behavior
-<!-- Describe the bug-free behavior. -->
+<!-- Describe what should happen -->
 
 
-#### Actual Behavior
-<!-- Describe what behavior you currently see. Try and compare to the expected behavior when possible. -->
+#### Current Behavior
+<!-- Describe what happens instead of the expected behavior -->
 
 
 ### Steps to Reproduce
-<!-- How can the bug be reproduced if someone else were to try and get the same behavior? -->
+<!-- Provide an unambiguous set of steps to reproduce this bug -->
 1. 
 
-### Relevant Code
-<!-- Link any code that you believe is causing the bug and explain why. Use GitHub permalinks when possible to show the lines of code. -->
+### Possible Solution
+<!-- Not obligatory, but suggest a fix/reason for the bug -->
 
 
-### Potential Solutions
-<!-- If you have any potential solutions at the moment, write down your ideas here. -->
-
-
-### Resources
-<!-- Link to any extra resources that might help with the bug fixes and describe the relevance if not obvious. -->
-- 
+### Additional Context
+<!-- Add any other relevant information about the bug here -->
