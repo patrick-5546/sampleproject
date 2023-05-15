@@ -84,7 +84,7 @@ peppercorn==0.6
     # via sampleproject (pyproject.toml)
 pygments==2.14.0
     # via mkdocs-material
-pymdown-extensions==9.10
+pymdown-extensions==10.0
     # via
     #   mkdocs-material
     #   mkdocstrings
