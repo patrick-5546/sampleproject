@@ -4,9 +4,7 @@
 #
 #    pip-compile --extra=test --output-file=requirements/test.txt pyproject.toml
 #
-attrs==22.2.0
-    # via pytest
-coverage[toml]==7.2.2
+coverage[toml]==7.2.7
     # via
     #   pytest-cov
     #   sampleproject (pyproject.toml)
@@ -14,24 +12,24 @@ exceptiongroup==1.1.1
     # via pytest
 iniconfig==2.0.0
     # via pytest
-packaging==23.0
+packaging==23.1
     # via
     #   pytest
     #   pytest-sugar
 peppercorn==0.6
     # via sampleproject (pyproject.toml)
-pluggy==1.0.0
+pluggy==1.2.0
     # via pytest
-pytest==7.2.2
+pytest==7.4.0
     # via
     #   pytest-cov
     #   pytest-sugar
     #   sampleproject (pyproject.toml)
-pytest-cov==4.0.0
+pytest-cov==4.1.0
     # via sampleproject (pyproject.toml)
-pytest-sugar==0.9.6
+pytest-sugar==0.9.7
     # via sampleproject (pyproject.toml)
-termcolor==2.2.0
+termcolor==2.3.0
     # via pytest-sugar
 tomli==2.0.1
     # via pytest
